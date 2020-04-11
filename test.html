@@ -1,0 +1,33 @@
+<html>
+<head></head>
+    
+<body>
+    <h1>Total Number of Visitors</h1>
+    
+<p id="demo"></p>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script type='text/javascript'>    
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1iYxMoGOjNgOuNOEIDgt35K5GgSqJoUKfth9Kby0WsaI/edit?usp=sharing';
+
+  function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data, tabletop) {
+    //alert('Successfully processed!')
+    console.log(data);
+    document.getElementById("demo").innerHTML = data[0].Count;
+  }
+
+  window.addEventListener('DOMContentLoaded', init)
+
+
+</script>
+
+    
+    
+
+</body>
+</html>
